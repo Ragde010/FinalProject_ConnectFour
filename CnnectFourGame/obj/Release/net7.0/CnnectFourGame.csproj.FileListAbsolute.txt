@@ -1,0 +1,15 @@
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/bin/Release/net7.0/CnnectFourGame
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/bin/Release/net7.0/CnnectFourGame.deps.json
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/bin/Release/net7.0/CnnectFourGame.runtimeconfig.json
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/bin/Release/net7.0/CnnectFourGame.dll
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/bin/Release/net7.0/CnnectFourGame.pdb
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.csproj.AssemblyReference.cache
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.AssemblyInfoInputs.cache
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.AssemblyInfo.cs
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.csproj.CoreCompileInputs.cache
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.dll
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/refint/CnnectFourGame.dll
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.pdb
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/CnnectFourGame.genruntimeconfig.cache
+/Users/ragdejumawan/Projects/CnnectFourGame/CnnectFourGame/obj/Release/net7.0/ref/CnnectFourGame.dll
