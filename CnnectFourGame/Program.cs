@@ -87,7 +87,14 @@ public class ConnectFour : BoardGame
 
     public override void DropSymbol(int column, char symbol)
     {
-        
+        for (int row = Rows - 1; row >= 0; row--)
+        {
+            if (Cells[row, column].Symbol == ' ')
+            {
+                Cells[row, column].Symbol = symbol;
+                break;
+            }
+        }
     }
 
     public override bool CheckWin(char symbol)
@@ -99,7 +106,18 @@ public class ConnectFour : BoardGame
 
     public override bool IsBoardFull()
     {
-        
+        for (int row = 0; row < Rows; row++)
+        {
+            for (int col = 0; col < Columns; col++)
+            {
+                if (Cells[row, col].Symbol == ' ')
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
 
@@ -109,16 +127,59 @@ public class GameEngine
 
     public void StartGame()
     {
+        Game = new ConnectFour();
+        Game.InitializeBoard();
 
+        bool gameOver = false;
+        char currentPlayer = 'X';
+
+        while (!gameOver)
+        {
+            Game.PrintBoard();
+            Console.WriteLine($"Player {currentPlayer}'s turn. Enter a column number(1-{BoardGame.Columns}) to drop your symbol:");
+
+            if(int.TryParse(Console.ReadLine(), out int col))
+            {
+                col--; //Adjust to 0-based index
+                if (Game.IsValidMove(col))
+                {
+                    Game.DropSymbol(col, currentPlayer);
+                    if (Game.CheckWin(currentPlayer))
+                    {
+                        Game.PrintBoard();
+                        Console.WriteLine($"Player{currentPlayer} wins!");
+                        gameOver = true;
+                    }
+                    else if (Game.IsBoardFull())
+                    {
+                        Game.PrintBoard();
+                        Console.WriteLine("It's a draw!");
+                        gameOver = true;
+                    }
+                    else
+                    {
+                        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid move. Please try again.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a number.");
+            }
+        }
     }
-
 }
 
     class Program
     {
         static void Main(string[] args)
         {
-
+            GameEngine gameEngine = new GameEngine();
+            gameEngine.StartGame();
         }
     }
 
