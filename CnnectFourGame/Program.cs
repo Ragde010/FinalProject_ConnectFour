@@ -99,9 +99,37 @@ public class ConnectFour : BoardGame
 
     public override bool CheckWin(char symbol)
     {
-        // Check rows/column for a win
+        //Check rows for a win
+        for(int row = 0; row <Rows; row++)
+        {
+            if(CheckSequence(Cells, 0, 0, 1, symbol,4))
+            {
+                return true;
+            }
+        }
         
        
+    }
+    private bool CheckSequence(Cell[,] cells, int startRow, int startCol, int rowIncrement, int colIncrement, char symbol, int count)
+    {
+        int endRow = startRow + (rowIncrement * (count-1));
+        int endCol = startCol +(colIncrement * (count-1));
+
+        if(endRow >= 0 && endRows <Rows && endCol >= 0 && endCol < Columns)
+        {
+            for (int i = 0; i<count; i++)
+            {
+                int row = startRow + (rowIncrement * i);
+                int col = startCol + (colIncrement * i);
+
+                if(cells[row,col].Symbol !=symbol)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false; // No win condition found.
     }
 
     public override bool IsBoardFull()
