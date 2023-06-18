@@ -8,7 +8,7 @@ public class Cell
         Symbol = symbol;
     }
 }
-// Base Class
+
 public abstract class BoardGame
 {
     protected const int Rows = 6; //It represents the number of rows in the game board.
