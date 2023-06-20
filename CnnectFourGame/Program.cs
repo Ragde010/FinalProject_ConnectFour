@@ -102,7 +102,15 @@ public class ConnectFour : BoardGame
         //Check rows for a win
         for(int row = 0; row <Rows; row++)
         {
-            if(CheckSequence(Cells, 0, 0, 1, symbol,4))
+            if(CheckSequence(Cells,row, 0, 0, 1, symbol,4))
+            {
+                return true;
+            }
+        }
+        //Check columns for a win
+        for(int col = 0; col < Columns; col++)
+        {
+            if(CheckSequence(Cells, 0, col 1, 0, symbol,4))
             {
                 return true;
             }
