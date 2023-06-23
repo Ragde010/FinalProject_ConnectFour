@@ -115,29 +115,63 @@ public class ConnectFour : BoardGame
                 return true;
             }
         }
-        
+
+        //Check diagonals (top-left to bottom-right) for a win
+        for(int row = 0; row < Rows - 3; row++)
+        {
+            for(int col = 0; col <Columns - 3; col++)
+            {
+                if(CheckSequence(Cells,row,col,1,1,symbol,4))
+                {
+                    return true;
+                }
+            }
+        }
+
+        //Check diagonals (top-right to bottom-left) for a win
+        for (int row = 0; row < Rows - 3; row++)
+        {
+            for (int col = 3; col < Columns; col++)
+            {
+                if (CheckSequence(cells, row, col, 1, -1, symbol, 4))
+                {
+                    return true;
+                }
+            }
+        }
+        return false; // No win condition found
        
     }
+    // This method checks for a sequence of symbols in the Connect4 game grid
+    // It takes the current game grid, starting row and column, row and column increments,
+    // the symbol to check, and the required count of symbols for a win condition
     private bool CheckSequence(Cell[,] cells, int startRow, int startCol, int rowIncrement, int colIncrement, char symbol, int count)
-    {
+    {   
+        // Calculate the end row and column based on the increments and count
         int endRow = startRow + (rowIncrement * (count-1));
         int endCol = startCol +(colIncrement * (count-1));
-
+        
+        
+        // Check if the end row and column are within the game grid boundaries
         if(endRow >= 0 && endRows <Rows && endCol >= 0 && endCol < Columns)
         {
+             // Iterate through the sequence of cells to check for the symbol
             for (int i = 0; i<count; i++)
             {
                 int row = startRow + (rowIncrement * i);
                 int col = startCol + (colIncrement * i);
 
+                // If the symbol at the current cell does not match the desired symbol, return false
                 if(cells[row,col].Symbol !=symbol)
                 {
                     return false;
                 }
             }
+            // If all symbols in the sequence match the desired symbol, return true
             return true;
         }
-        return false; // No win condition found.
+        // If the sequence extends beyond the game grid boundaries, return false
+        return false; 
     }
 
     public override bool IsBoardFull()
