@@ -153,7 +153,7 @@ public class ConnectFour : BoardGame
         
         
         // Check if the end row and column are within the game grid boundaries
-        if(endRow >= 0 && endRows <Rows && endCol >= 0 && endCol < Columns)
+        if(endRow >= 0 && endRow <Rows && endCol >= 0 && endCol < Columns)
         {
              // Iterate through the sequence of cells to check for the symbol
             for (int i = 0; i<count; i++)
